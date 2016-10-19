@@ -19,6 +19,9 @@ Vagrant.configure(2) do |config|
   # Prevent password requests during setup
   #vagrant ALL=(ALL) NOPASSWD: ALL
 
+  # Allow for Vagrant to use BitBucket ssh keys
+  config.ssh.forward_agent = true
+  
   # Allow provisioning of bootstrap files
   config.vm.provision "shell" do |s|
     s.path = "bootstrap.sh"
