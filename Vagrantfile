@@ -10,11 +10,11 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty32"
 
   # Configure local network settings
-  config.vm.hostname = "django-dev"
+  config.vm.hostname = "django.dev"
   #config.hostupdater.remove_on_suspend = false
   config.hostsupdater.aliases = ["django.dev"]
 
-  #config.vm.network "private_network", ip: "192.168.33.113"
+  config.vm.network "private_network", ip: "192.168.33.1"
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.network "forwarded_port", guest: 22, host: 22
   # Prevent password requests during setup
