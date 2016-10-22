@@ -16,12 +16,13 @@ Vagrant.configure(2) do |config|
 
   #config.vm.network "private_network", ip: "192.168.33.113"
   config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 22, host: 22
   # Prevent password requests during setup
   #vagrant ALL=(ALL) NOPASSWD: ALL
 
   # Allow for Vagrant to use BitBucket ssh keys
   config.ssh.forward_agent = true
-  
+
   # Allow provisioning of bootstrap files
   config.vm.provision "shell" do |s|
     s.path = "bootstrap.sh"
