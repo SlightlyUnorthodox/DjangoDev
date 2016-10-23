@@ -53,6 +53,6 @@ function install_django_server() {
     log "Running ${FUNCNAME[0]}"
 
     log "${FUNCNAME[0]}: Installing Django 1.7 and freeze from pip"
-    pip install Django==1.7 freeze
+    pip install Django==1.10 freeze
 
 }
