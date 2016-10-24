@@ -35,7 +35,7 @@ Installing Git on your host machine is completely optional, but it can make thin
 
 2. Download the 'DjangoDev' Repository directly:
  * Download the zipfile [here](https://github.com/SlightlyUnorthodox/DjangoDev/archive/master.zip)
- * Unzip the file where you'd like to store your vagrant box. (I recommend the Desktop)
+ * Unzip the file where you'd like to store your vagrant box.
 
 
 ### 4. Run Vagrant setup
@@ -55,6 +55,7 @@ Open the terminal using
 ```{bash}
   cd ~/desktop/DjangoDev
   vagrant plugin install vagrant-hostsupdater
+  vagrant plugin install vagrant-triggers
   vagrant up
 ```
 
@@ -71,7 +72,9 @@ Open the terminal using
 
 ## Access Django Server
 
-The Django server can be accessed from the [localhost](http://localhost:8000)
+If it is running, the Django server can be accessed from the ['http://djangodev:8000'](http://djangodev:8000)
+
+To start Django in your development box, run the command 'sudo python manage.py runserver 0.0.0.0:8000' from the Django project directory.
 
 ## Access Your Vagrant Box Directly
 
@@ -88,7 +91,7 @@ The Django server can be accessed from the [localhost](http://localhost:8000)
 On Windows, you'll likely need to use Putty to access your vagrant box.
 
 * Hosname: localhost
-* Port: 2222
+* Port: 22
 * Username: vagrant
 * Password: vagrant
 
